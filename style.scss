@@ -295,3 +295,80 @@ button{
         pointer-events: auto;
     }
 }
+
+
+//Inputs
+
+.input-wrapper{
+
+    &.disabled{
+
+        label{
+            color: $gray-600;
+        }
+
+        input[type="text"]{
+            background: $gray-200;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+    
+    &.error{
+
+        input[type="text"]{
+            background: $white !important;
+            border-color: $error !important;
+        }
+
+        .help-text{
+            color: $error;
+            display: flex;
+        }
+    }
+
+    &.show-help{
+        
+        .help-text{
+            display: flex;
+        }
+    }
+
+    label{
+        display: block;
+        margin-bottom: $spacing-4px;
+    }
+   
+    input[type="text"]{
+        font-size: 16px;
+        padding: $spacing-12px $spacing-16px;
+        border: 1px solid $gray-400;
+        border-radius: 2px;
+        transition: $transition;
+        background: $gray-100;
+        width: 300px;
+    
+        &:hover{
+            border-color: $gray-600;
+        }
+        
+        &:focus{
+            outline: none;
+            border-color: $blue-300;
+            background: $white;
+        }
+    }
+
+    .help-text{
+        display: flex;
+        align-items: center;
+        margin-top: $spacing-4px;
+        color: $gray-700;
+        display: none;
+
+        svg{
+            margin-right: 8px;
+        }
+    }
+}
+

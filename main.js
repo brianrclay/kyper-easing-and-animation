@@ -14,3 +14,11 @@ $('.show-modal').click(function(){
 $('.modal-overlay, .modal .close, .modal .close-modal').click(function(){
     $('.modal, .modal-overlay').removeClass('open');
 })
+
+$('.error-input').keyup(function(){
+    $(this).parent('.input-wrapper').addClass('error');
+
+    if(!$(this).val()){
+        $(this).parent('.input-wrapper').removeClass('error');
+    }
+});
