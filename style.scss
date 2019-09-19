@@ -146,9 +146,34 @@ a, .link{
     transition: $transition;
     text-decoration: none;
     cursor: pointer;
+    position: relative;
 
     &:hover{
         color: $blue-400;
+    }
+
+    &::before{
+        transition: $transition;
+        height: 1px;
+        width: 0;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        background: transparent;
+        content: "";
+    }
+
+    &:focus, &:hover{
+        outline: none;
+        color: $blue-400;
+        background: $blue-100;
+        
+        &::before{
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            background: $blue-400;
+        }
     }
 }
 
@@ -308,7 +333,7 @@ button{
         }
 
         input[type="text"]{
-            background: $gray-200;
+            opacity: .55;
             cursor: not-allowed;
             pointer-events: none;
         }
