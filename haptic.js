@@ -5,7 +5,7 @@ $(document).ready(function () {
         return check;
     };
     if (navigator.vibrate && mobilecheck()) {
-        $('.input-wrapper.error input').keyup(function(){
+        $('.input-wrapper.error input').click(function(){
             window.navigator.vibrate(200);
         })
     }
