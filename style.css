@@ -18,7 +18,7 @@
 
 body {
   padding: 48px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 div, p, a, input, textarea, label, button, h1, h2, h3 {
@@ -132,18 +132,22 @@ a.icon-link svg, .link.icon-link svg {
 }
 
 button {
-  background: #E2E8F0;
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  color: #2F73DA;
   -webkit-transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
   transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
   border: 1px solid #E2E8F0;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 12px;
+  font-weight: 600;
 }
 
 button:hover {
-  background: #CBD3DF;
-  border-color: #CBD3DF;
+  background: #ffffff;
+  border: 1px solid #165ECC;
+  color: #165ECC;
 }
 
 button:focus {
@@ -179,16 +183,14 @@ button.primary:hover {
   border: 1px solid #165ECC;
 }
 
-button.outline {
-  background: #ffffff;
-  border: 1px solid #E2E8F0;
+button.transparent {
+  background: transparent;
   color: #2F73DA;
+  border-color: transparent;
 }
 
-button.outline:hover {
-  background: #ffffff;
-  border: 1px solid #165ECC;
-  color: #165ECC;
+button.transparent:hover {
+  background: #EAF1FB;
 }
 
 .drawer {
@@ -320,7 +322,7 @@ button.outline:hover {
   font-size: 16px;
   padding: 12px 16px;
   border: 1px solid #CBD3DF;
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
   transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
   background: #F7F9FC;

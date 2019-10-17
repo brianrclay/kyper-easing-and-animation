@@ -176,16 +176,20 @@ a, .link{
 //Buttons
 
 button{
-    background: $gray-300;
+    background: $white;
+    border: 1px solid $gray-300;
+    color: $blue-300;
     transition: $transition;
     border: 1px solid $gray-300;
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 4px;
     padding: $spacing-12px;
+    font-weight: 600;
 
     &:hover{
-        background: $gray-400;
-        border-color: $gray-400;
+        background: $white;
+        border: 1px solid $blue-400;
+        color: $blue-400;
     }
 
     &:focus{
@@ -219,15 +223,13 @@ button{
         }
     }
     
-    &.outline{
-        background: $white;
-        border: 1px solid $gray-300;
+    &.transparent{
+        background: transparent;
         color: $blue-300;
+        border-color: transparent;
 
         &:hover{
-            background: $white;
-            border: 1px solid $blue-400;
-            color: $blue-400;
+            background: $blue-100;
         }
     }
 }
@@ -364,7 +366,7 @@ button{
         font-size: 16px;
         padding: $spacing-12px $spacing-16px;
         border: 1px solid $gray-400;
-        border-radius: 2px;
+        border-radius: 4px;
         transition: $transition;
         background: $gray-100;
         width: 300px;
