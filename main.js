@@ -31,10 +31,22 @@ $('.error-input').keyup(function(){
 
 function closeModal(){
     $('.modal, .modal-overlay').removeClass('open');
+    $('.modal').css('top', 'unset');
     $('body, html').css('overflow', 'auto');
+    console.log('fired')
 }
 
+var wWidth = $(window).width();
 
-$( function() {
-    $( "#draggable" ).draggable({ axis: "y", drag: function(){closeModal()} });
-  } );
+
+if(wWidth <= 500){
+    $( function() {
+        $( ".draggable" ).draggable({ 
+            axis: "y", 
+            // snap: 'body', snapMode: 'outer',
+            stop: function(){
+                closeModal()
+            } 
+        });
+    } );
+}

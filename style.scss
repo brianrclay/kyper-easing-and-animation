@@ -61,7 +61,7 @@ $spacing-96px: 96px;
 }
 
 body{
-    padding: $spacing-48px;
+    // padding: $spacing-48px;
     overflow-x: hidden;
 }
 
@@ -288,6 +288,8 @@ button{
 
     @media (max-width: 500px){
         top: unset;
+        left: unset;
+        width: 100%;
         bottom: -825px;
         visibility: visible;
         opacity: 1;
@@ -296,6 +298,7 @@ button{
         border-radius: 0;
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
+        transform: none;
 
         .close{
             border-radius: 100% !important;
@@ -309,7 +312,7 @@ button{
         transform: translate(-50%, -50%);
 
         @media (max-width: 500px){
-            transform: translate(-50%, 0);
+            transform: none;
             bottom: 0;
         }
     }
