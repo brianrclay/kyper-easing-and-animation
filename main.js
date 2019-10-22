@@ -18,8 +18,7 @@ $('.show-modal-2').click(function(){
 });
 
 $('.modal-overlay, .modal .close, .modal .close-modal').click(function(){
-    $('.modal, .modal-overlay').removeClass('open');
-    $('body, html').css('overflow', 'auto');
+    closeModal();
 });
 
 $('.error-input').keyup(function(){
@@ -29,3 +28,13 @@ $('.error-input').keyup(function(){
         $(this).parent('.input-wrapper').removeClass('error');
     }
 });
+
+function closeModal(){
+    $('.modal, .modal-overlay').removeClass('open');
+    $('body, html').css('overflow', 'auto');
+}
+
+
+$( function() {
+    $( "#draggable" ).draggable({ axis: "y", drag: function(){closeModal()} });
+  } );

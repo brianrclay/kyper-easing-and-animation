@@ -293,6 +293,13 @@ button{
         opacity: 1;
         pointer-events: auto;
         max-width: unset;
+        border-radius: 0;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+
+        .close{
+            border-radius: 100% !important;
+        }
     }
 
     &.open{
