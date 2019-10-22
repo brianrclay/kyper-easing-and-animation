@@ -31,9 +31,10 @@ $('.error-input').keyup(function(){
 
 function closeModal(){
     $('.modal, .modal-overlay').removeClass('open');
-    $('.modal').css('top', 'unset');
     $('body, html').css('overflow', 'auto');
-    console.log('fired')
+    if(wWidth <= 500){
+        $('.modal').css('top', 'unset');
+    }
 }
 
 var wWidth = $(window).width();

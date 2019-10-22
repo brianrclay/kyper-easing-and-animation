@@ -376,6 +376,20 @@ button{
     }
 }
 
+.modal.draggable{
+    &:before{
+        content: "";
+        width: 40px;
+        height: 5px;
+        border-radius: 5px;
+        background: $white;
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
 .modal-2{
     .modal-footer{
         box-shadow: $shadow-top;
