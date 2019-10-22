@@ -28,6 +28,7 @@ $easing: cubic-bezier(.475,.425,0,.995);
 $shadow-low: 0px 1px 3px rgba(87, 102, 117, 0.2);
 $shadow-med: 0px 3px 8px rgba(87, 102, 117, 0.15);
 $shadow-high: 0px 10px 20px rgba(87, 102, 117, 0.16);
+$shadow-top: 0px -1px 3px rgba(87, 102, 117, 0.2);
 
 //Spacing
 $spacing-4px: 4px;
@@ -102,7 +103,7 @@ h2, .h2{
 
 h3, .h3{
     font-size: 20px;
-    line-height: 24 px;
+    line-height: 24px;
 }
 
 .paragraph, p{
@@ -185,6 +186,10 @@ button{
     border-radius: 4px;
     padding: $spacing-12px;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
 
     &:hover{
         background: $white;
@@ -238,6 +243,7 @@ button{
 
 .drawer{
     position: absolute;
+    display: none;
     right: -400px;
     top: 0;
     transition: $transition;
@@ -264,37 +270,104 @@ button{
 }
 
 .modal{
-    height: 400px;
-    width: 400px;
+    max-height: 600px;
+    max-width: 400px;
+    width: 100%;
     background: $white;
-    padding: $spacing-24px;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -40%);
     box-shadow: $shadow-high;
     z-index: 2;
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
     transition: $transition;
+    border-radius: 4px;
+
+    @media (max-width: 500px){
+        top: unset;
+        bottom: -825px;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
 
     &.open{
         visibility: visible;
         opacity: 1;
         pointer-events: auto;
         transform: translate(-50%, -50%);
+
+        @media (max-width: 500px){
+            transform: translate(-50%, 0);
+            bottom: 16px;
+        }
     }
 
-    .close{
-        float: right;
-        transform: translate(4px, -4px);
-        cursor: pointer;
+    .modal-header{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $spacing-24px;
 
-        svg{
+        .close{
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
             width: 24px;
             height: 24px;
+            cursor: pointer;
+            border-radius: 4px;
+            background: $gray-200;
+    
+            svg{
+                width: 24px;
+                height: 24px;
+            }
         }
+    }
+
+    .modal-body{
+        padding: 0 $spacing-24px $spacing-24px;
+        margin-bottom: 44px;
+        max-height: 462px;
+        overflow: auto;
+        z-index: 1;
+
+        p{
+            color: $gray-700;
+        }
+    }
+
+    .modal-footer{
+        display: flex;
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+        transform: translateY(-44px);
+
+        > a, > button{
+            width: 50%;
+
+            &:first-of-type{
+                border-radius: 0;
+                border-bottom-left-radius: 4px;
+            }
+            
+            &:last-of-type{
+                border-radius: 0;
+                border-bottom-right-radius: 4px;
+            }
+        }
+    }
+}
+
+.modal-2{
+    .modal-footer{
+        box-shadow: $shadow-top;
     }
 }
 
@@ -360,6 +433,7 @@ button{
     label{
         display: block;
         margin-bottom: $spacing-4px;
+        color: $gray-700;
     }
    
     input[type="text"]{

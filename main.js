@@ -8,12 +8,16 @@ $('.close-drawer, .close').click(function(){
 
 
 $('.show-modal').click(function(){
-    $('.modal, .modal-overlay').addClass('open');
-})
+    $('.modal-1, .modal-overlay').addClass('open');
+});
+
+$('.show-modal-2').click(function(){
+    $('.modal-2, .modal-overlay').addClass('open');
+});
 
 $('.modal-overlay, .modal .close, .modal .close-modal').click(function(){
     $('.modal, .modal-overlay').removeClass('open');
-})
+});
 
 $('.error-input').keyup(function(){
     $(this).parent('.input-wrapper').addClass('error');
