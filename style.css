@@ -262,6 +262,7 @@ button.transparent:hover {
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
+    max-width: unset;
   }
 }
 

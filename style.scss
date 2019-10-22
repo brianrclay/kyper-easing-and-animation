@@ -292,6 +292,7 @@ button{
         visibility: visible;
         opacity: 1;
         pointer-events: auto;
+        max-width: unset;
     }
 
     &.open{
