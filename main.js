@@ -9,14 +9,17 @@ $('.close-drawer, .close').click(function(){
 
 $('.show-modal').click(function(){
     $('.modal-1, .modal-overlay').addClass('open');
+    $('body, html').css('overflow', 'hidden');
 });
 
 $('.show-modal-2').click(function(){
     $('.modal-2, .modal-overlay').addClass('open');
+    $('body, html').css('overflow', 'hidden');
 });
 
 $('.modal-overlay, .modal .close, .modal .close-modal').click(function(){
     $('.modal, .modal-overlay').removeClass('open');
+    $('body, html').css('overflow', 'auto');
 });
 
 $('.error-input').keyup(function(){
