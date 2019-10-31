@@ -28,7 +28,7 @@
 /** tiny **/
 /** tiny-bold-upper **/
 /** tiny-upper **/
-div, p, a, input, textarea, label, button, h1, h2, h3 {
+div, p, a, input, textarea, label, button, h1, h2, h3, li {
   color: #19212C;
 }
 
@@ -36,7 +36,7 @@ div, p, a, input, textarea, label, button, h1, h2, h3 {
   color: #454F5E;
 }
 
-div, p, a, input, textarea, label, button {
+div, p, a, input, textarea, label, button, li {
   font-family: "Proxima Nova", sans-serif;
   font-size: 16px;
   line-height: 20px;
@@ -572,5 +572,133 @@ button.transparent-btn:hover, .neutral-btn.transparent-btn:hover {
 
 .input-wrapper .help-text svg {
   margin-right: 8px;
+}
+
+.dropdown {
+  position: relative;
+  width: 300px;
+}
+
+.dropdown.open .dropdown-toggle {
+  outline: none;
+  border-color: #2F73DA;
+  background: #ffffff;
+}
+
+.dropdown.open .dropdown-toggle .caret {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  top: calc(100% + 4px);
+}
+
+.dropdown label {
+  display: block;
+  margin-bottom: 4px;
+  color: #454F5E;
+}
+
+.dropdown .dropdown-toggle {
+  font-size: 16px;
+  padding: 12px 16px;
+  border: 1px solid #CBD3DF;
+  border-radius: 4px;
+  -webkit-transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  background: #F7F9FC;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 400;
+  color: #19212C;
+}
+
+.dropdown .dropdown-toggle:hover {
+  border-color: #768397;
+}
+
+.dropdown .dropdown-toggle:focus {
+  outline: none;
+  border-color: #2F73DA;
+  background: #ffffff;
+}
+
+.dropdown .dropdown-toggle .caret {
+  -webkit-transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+}
+
+.dropdown .dropdown-menu {
+  background: #ffffff;
+  -webkit-box-shadow: 0px 3px 8px rgba(87, 102, 117, 0.15);
+          box-shadow: 0px 3px 8px rgba(87, 102, 117, 0.15);
+  position: absolute;
+  width: 100%;
+  -webkit-transition: cubic-bezier(0.475, 0.425, 0, 0.995) 500ms all;
+  transition: cubic-bezier(0.475, 0.425, 0, 0.995) 500ms all;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  top: 100%;
+  z-index: 2;
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+  padding: 4px 4px 0 4px;
+  cursor: pointer;
+}
+
+.dropdown .dropdown-menu .dropdown-item:last-child {
+  padding: 4px;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover .item-inner {
+  background: #F7F9FC;
+}
+
+.dropdown .dropdown-menu .dropdown-item.active .item-inner {
+  color: #165ECC;
+  background-color: #EAF1FB;
+}
+
+.dropdown .dropdown-menu .dropdown-item .item-inner {
+  padding: 12px 8px;
+  -webkit-transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.dd-scrim {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
+}
+
+.dd-scrim.open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 /*# sourceMappingURL=style.css.map */

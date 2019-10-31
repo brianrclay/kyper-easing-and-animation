@@ -51,3 +51,33 @@ if(wWidth <= 500){
         });
     } );
 }
+
+// Dropdown
+
+$('.dropdown-toggle').click(function(){
+    $(this).parent('.dropdown').toggleClass('open');
+    $('.dd-scrim').toggleClass('open');
+})
+
+$('.dd-scrim').click(function(){
+    $('.dropdown').removeClass('open');
+    $('.dd-scrim').removeClass('open');
+})
+
+$('.dropdown-item').click(function(){
+    // var dropdownToggleText = $(this).parents('.dropdown').find('.toggle-label');
+    var itemText = $(this).find('.item-inner').text();
+    $(this).parents('.dropdown').find('.toggle-label').text(itemText);
+    $(this).parents('.dropdown').find('.dropdown-item').removeClass('active')
+    $(this).addClass('active');
+    $(this).parents('.dropdown').removeClass('open');
+    $('.dd-scrim').removeClass('open');
+});
+
+$(document).ready(function(){
+    $('.dropdown-menu').each(function(){
+        if(!$(this).find('.item-inner').hasClass('active')){
+            $('.')
+        }
+    })
+})
