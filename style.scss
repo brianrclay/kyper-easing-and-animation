@@ -374,6 +374,14 @@ a, .link {
             height: 16px;
         }
     }
+
+    &.tertiary{
+        color: $gray-700;
+
+        &:hover{
+            color: $primary-400;
+        }
+    }
 }
 
 //Buttons
@@ -400,7 +408,7 @@ button, .neutral-btn {
     }
 
     &:focus {
-        outline: -webkit-focus-ring-color auto 2px;
+        box-shadow: 0 0 0 2px rgba(82, 138, 224, .8);
     }
 
     &.icon-btn {
@@ -429,6 +437,17 @@ button, .neutral-btn {
             border: 1px solid $primary-400;
         }
     }
+    
+    &.destructive-btn {
+        background: $error-300;
+        border: 1px solid $error-300;
+        color: $white;
+
+        &:hover {
+            background: $error-400;
+            border: 1px solid $error-400;
+        }
+    }
 
     &.transparent-btn {
         background: transparent;
@@ -437,6 +456,17 @@ button, .neutral-btn {
 
         &:hover {
             background: $primary-100;
+        }
+    }
+
+    &.tertiary-btn {
+        background: transparent;
+        color: $gray-700;
+        border-color: transparent;
+
+        &:hover {
+            background: $gray-100;
+            color: $gray-900;
         }
     }
 }
@@ -874,3 +904,249 @@ button, .neutral-btn {
         pointer-events: auto;
     }
 }
+
+.full-height{
+    margin: 48px;
+
+    button.animate {
+        position: relative;
+        overflow: hidden;
+        box-shadow: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        opacity: .8;
+
+        span{
+            z-index: 2;
+            color: $gray-400;
+        }
+
+        .loader{
+            position: absolute;
+            left: -100%;
+            top: 0;
+            background: linear-gradient(88.15deg, #2F73DA 0.62%, #034AB3 98.88%);
+            height: 100%;
+            width: 100%;
+            animation: grow infinite 2000ms $easing;
+            z-index: 1;
+
+            @keyframes grow {
+                0%{
+                    left: -100%;
+                }
+                100%{
+                    left: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+.border-top{
+    margin: 48px;
+
+    button.animate {
+        position: relative;
+        overflow: hidden;
+        box-shadow: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        opacity: .8;
+
+        span{
+            z-index: 2;
+            color: $gray-400;
+        }
+
+        .border{
+            position: absolute;
+            z-index: 1;
+            background: $primary-500;
+
+            &.top{
+                height: 3px;
+                top: 0;
+                right: 100%;
+                width: 0;
+                animation-delay: 0;
+                animation: grow-hor-top 1200ms $easing infinite;
+                
+                @keyframes grow-hor-top {
+                    0%{
+                        width: 0;
+                        right: 100%;
+                    }
+                    50%{
+                        width: 100%;
+                        right: 0;
+                    }
+                    100%{
+                        width: 0;
+                        right: 0;
+                    }
+                }
+            }
+
+            &.rigt{
+                width: 3px;
+                top: 0;
+                right: 0;
+                width: 0;
+                animation-delay: 300ms;
+                animation: grow-vert 1200ms $easing infinite;
+            }
+
+            &.bottom{
+                height: 3px;
+                bottom: 0;
+                right: 0;
+                width: 0;
+                animation-delay: 600ms;
+                animation: grow-hor 1200ms $easing infinite;
+            }
+
+            &.left{
+                width: 3px;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                animation-delay: 900ms;
+                animation: grow-vert 1200ms $easing infinite;
+            }
+        }
+    }
+}
+
+.border-circle{
+    margin: 48px;
+
+    button.animate {
+        position: relative;
+        overflow: hidden;
+        box-shadow: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        opacity: .8;
+
+        span{
+            z-index: 2;
+            color: $gray-400;
+        }
+
+        .border{
+            position: absolute;
+            z-index: 1;
+            background: $primary-500;
+
+            &.top{
+                height: 3px;
+                top: 0;
+                right: 100%;
+                width: 0;
+                animation-delay: 0;
+                animation: grow-hor-top-circle 2000ms linear forwards infinite;
+                
+                @keyframes grow-hor-top-circle {
+                    0%{
+                        width: 0;
+                        right: 100%;
+                    }
+                    50%{
+                        width: 100%;
+                        right: 0;
+                    }
+                    100%{
+                        width: 0;
+                        right: 0;
+                    }
+                }
+            }
+
+            &.right{
+                width: 3px;
+                bottom: 100%;
+                right: 0;
+                animation: grow-vert-right linear forwards infinite;
+                animation-duration: 2000ms;
+                animation-delay: 1000ms;
+                @keyframes grow-vert-right {
+                    0%{
+                        height: 0;
+                        bottom: 100%;
+                    }
+                    50%{
+                        height: 100%;
+                        bottom: 0;
+                    }
+                    100%{
+                        height: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+
+            &.bottom{
+                height: 3px;
+                bottom: 0;
+                left: 100%;
+                width: 0;
+                animation: grow-hor-bot linear forwards infinite;
+                animation-duration: 2000ms;
+                animation-delay: 2000ms;
+
+                @keyframes grow-hor-bot {
+                    0%{
+                        width: 0;
+                        left: 100%;
+                    }
+                    50%{
+                        width: 100%;
+                        left: 0;
+                    }
+                    100%{
+                        width: 0;
+                        left: 0;
+                    }
+                }
+            }
+
+            &.left{
+                width: 3px;
+                top: 100%;
+                left: 0;
+                animation-delay: 900ms;
+                animation: grow-vert-left linear forwards infinite;
+                animation-duration: 2000ms;
+                animation-delay: 1800ms;
+
+                @keyframes grow-vert-left {
+                    0%{
+                        height: 0;
+                        top: 100%;
+                    }
+                    50%{
+                        height: 100%;
+                        top: 0;
+                    }
+                    100%{
+                        height: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes grow {
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+

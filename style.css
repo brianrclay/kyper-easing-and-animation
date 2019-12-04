@@ -156,6 +156,14 @@ a.icon-link svg, .link.icon-link svg {
   height: 16px;
 }
 
+a.tertiary, .link.tertiary {
+  color: #454F5E;
+}
+
+a.tertiary:hover, .link.tertiary:hover {
+  color: #165ECC;
+}
+
 button, .neutral-btn {
   background: #ffffff;
   border: 1px solid #E2E8F0;
@@ -186,7 +194,8 @@ button:hover, .neutral-btn:hover {
 }
 
 button:focus, .neutral-btn:focus {
-  outline: -webkit-focus-ring-color auto 2px;
+  -webkit-box-shadow: 0 0 0 2px rgba(82, 138, 224, 0.8);
+          box-shadow: 0 0 0 2px rgba(82, 138, 224, 0.8);
 }
 
 button.icon-btn, .neutral-btn.icon-btn {
@@ -218,6 +227,17 @@ button.primary-btn:hover, .neutral-btn.primary-btn:hover {
   border: 1px solid #165ECC;
 }
 
+button.destructive-btn, .neutral-btn.destructive-btn {
+  background: #DC2346;
+  border: 1px solid #DC2346;
+  color: #ffffff;
+}
+
+button.destructive-btn:hover, .neutral-btn.destructive-btn:hover {
+  background: #C3003E;
+  border: 1px solid #C3003E;
+}
+
 button.transparent-btn, .neutral-btn.transparent-btn {
   background: transparent;
   color: #2F73DA;
@@ -226,6 +246,17 @@ button.transparent-btn, .neutral-btn.transparent-btn {
 
 button.transparent-btn:hover, .neutral-btn.transparent-btn:hover {
   background: #EAF1FB;
+}
+
+button.tertiary-btn, .neutral-btn.tertiary-btn {
+  background: transparent;
+  color: #454F5E;
+  border-color: transparent;
+}
+
+button.tertiary-btn:hover, .neutral-btn.tertiary-btn:hover {
+  background: #F7F9FC;
+  color: #19212C;
 }
 
 .drawer {
@@ -700,5 +731,357 @@ button.transparent-btn:hover, .neutral-btn.transparent-btn:hover {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+}
+
+.full-height {
+  margin: 48px;
+}
+
+.full-height button.animate {
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  opacity: .8;
+}
+
+.full-height button.animate span {
+  z-index: 2;
+  color: #CBD3DF;
+}
+
+.full-height button.animate .loader {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  background: linear-gradient(88.15deg, #2F73DA 0.62%, #034AB3 98.88%);
+  height: 100%;
+  width: 100%;
+  -webkit-animation: grow infinite 2000ms cubic-bezier(0.475, 0.425, 0, 0.995);
+          animation: grow infinite 2000ms cubic-bezier(0.475, 0.425, 0, 0.995);
+  z-index: 1;
+}
+
+@-webkit-keyframes grow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes grow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.border-top {
+  margin: 48px;
+}
+
+.border-top button.animate {
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  opacity: .8;
+}
+
+.border-top button.animate span {
+  z-index: 2;
+  color: #CBD3DF;
+}
+
+.border-top button.animate .border {
+  position: absolute;
+  z-index: 1;
+  background: #034AB3;
+}
+
+.border-top button.animate .border.top {
+  height: 3px;
+  top: 0;
+  right: 100%;
+  width: 0;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation: grow-hor-top 1200ms cubic-bezier(0.475, 0.425, 0, 0.995) infinite;
+          animation: grow-hor-top 1200ms cubic-bezier(0.475, 0.425, 0, 0.995) infinite;
+}
+
+@-webkit-keyframes grow-hor-top {
+  0% {
+    width: 0;
+    right: 100%;
+  }
+  50% {
+    width: 100%;
+    right: 0;
+  }
+  100% {
+    width: 0;
+    right: 0;
+  }
+}
+
+@keyframes grow-hor-top {
+  0% {
+    width: 0;
+    right: 100%;
+  }
+  50% {
+    width: 100%;
+    right: 0;
+  }
+  100% {
+    width: 0;
+    right: 0;
+  }
+}
+
+.border-top button.animate .border.rigt {
+  width: 3px;
+  top: 0;
+  right: 0;
+  width: 0;
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+  -webkit-animation: grow-vert 1200ms cubic-bezier(0.475, 0.425, 0, 0.995) infinite;
+          animation: grow-vert 1200ms cubic-bezier(0.475, 0.425, 0, 0.995) infinite;
+}
+
+.border-top button.animate .border.bottom {
+  height: 3px;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+  -webkit-animation: grow-hor 1200ms cubic-bezier(0.475, 0.425, 0, 0.995) infinite;
+          animation: grow-hor 1200ms cubic-bezier(0.475, 0.425, 0, 0.995) infinite;
+}
+
+.border-top button.animate .border.left {
+  width: 3px;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+  -webkit-animation: grow-vert 1200ms cubic-bezier(0.475, 0.425, 0, 0.995) infinite;
+          animation: grow-vert 1200ms cubic-bezier(0.475, 0.425, 0, 0.995) infinite;
+}
+
+.border-circle {
+  margin: 48px;
+}
+
+.border-circle button.animate {
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  opacity: .8;
+}
+
+.border-circle button.animate span {
+  z-index: 2;
+  color: #CBD3DF;
+}
+
+.border-circle button.animate .border {
+  position: absolute;
+  z-index: 1;
+  background: #034AB3;
+}
+
+.border-circle button.animate .border.top {
+  height: 3px;
+  top: 0;
+  right: 100%;
+  width: 0;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation: grow-hor-top-circle 2000ms linear forwards infinite;
+          animation: grow-hor-top-circle 2000ms linear forwards infinite;
+}
+
+@-webkit-keyframes grow-hor-top-circle {
+  0% {
+    width: 0;
+    right: 100%;
+  }
+  50% {
+    width: 100%;
+    right: 0;
+  }
+  100% {
+    width: 0;
+    right: 0;
+  }
+}
+
+@keyframes grow-hor-top-circle {
+  0% {
+    width: 0;
+    right: 100%;
+  }
+  50% {
+    width: 100%;
+    right: 0;
+  }
+  100% {
+    width: 0;
+    right: 0;
+  }
+}
+
+.border-circle button.animate .border.right {
+  width: 3px;
+  bottom: 100%;
+  right: 0;
+  -webkit-animation: grow-vert-right linear forwards infinite;
+          animation: grow-vert-right linear forwards infinite;
+  -webkit-animation-duration: 2000ms;
+          animation-duration: 2000ms;
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+
+@-webkit-keyframes grow-vert-right {
+  0% {
+    height: 0;
+    bottom: 100%;
+  }
+  50% {
+    height: 100%;
+    bottom: 0;
+  }
+  100% {
+    height: 0;
+    bottom: 0;
+  }
+}
+
+@keyframes grow-vert-right {
+  0% {
+    height: 0;
+    bottom: 100%;
+  }
+  50% {
+    height: 100%;
+    bottom: 0;
+  }
+  100% {
+    height: 0;
+    bottom: 0;
+  }
+}
+
+.border-circle button.animate .border.bottom {
+  height: 3px;
+  bottom: 0;
+  left: 100%;
+  width: 0;
+  -webkit-animation: grow-hor-bot linear forwards infinite;
+          animation: grow-hor-bot linear forwards infinite;
+  -webkit-animation-duration: 2000ms;
+          animation-duration: 2000ms;
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
+}
+
+@-webkit-keyframes grow-hor-bot {
+  0% {
+    width: 0;
+    left: 100%;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 0;
+  }
+}
+
+@keyframes grow-hor-bot {
+  0% {
+    width: 0;
+    left: 100%;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 0;
+  }
+}
+
+.border-circle button.animate .border.left {
+  width: 3px;
+  top: 100%;
+  left: 0;
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+  -webkit-animation: grow-vert-left linear forwards infinite;
+          animation: grow-vert-left linear forwards infinite;
+  -webkit-animation-duration: 2000ms;
+          animation-duration: 2000ms;
+  -webkit-animation-delay: 1800ms;
+          animation-delay: 1800ms;
+}
+
+@-webkit-keyframes grow-vert-left {
+  0% {
+    height: 0;
+    top: 100%;
+  }
+  50% {
+    height: 100%;
+    top: 0;
+  }
+  100% {
+    height: 0;
+    top: 0;
+  }
+}
+
+@keyframes grow-vert-left {
+  0% {
+    height: 0;
+    top: 100%;
+  }
+  50% {
+    height: 100%;
+    top: 0;
+  }
+  100% {
+    height: 0;
+    top: 0;
+  }
+}
+
+@keyframes grow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
