@@ -750,18 +750,20 @@ button, .neutral-btn {
     input[type="text"] {
         font-size: 16px;
         padding: $spacing-small $spacing-med;
-        border: 1px solid $gray-400;
+        border: 1px solid $gray-600;
         border-radius: 4px;
         transition: $transition;
         background: $gray-100;
         width: 300px;
 
         &:hover {
-            border-color: $gray-600;
+            border-color: $gray-900;
+            background: $white;
         }
 
         &:focus {
             outline: none;
+            box-shadow: 0 0 0 2px rgba(82, 138, 224, .8);
             border-color: $primary-300;
             background: $white;
         }
