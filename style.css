@@ -1087,4 +1087,99 @@ button.tertiary-btn:hover, .neutral-btn.tertiary-btn:hover {
     left: 100%;
   }
 }
+
+.new-loader {
+  padding: 100px;
+}
+
+.new-loader button {
+  position: relative;
+}
+
+.new-loader button span {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.new-loader button svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.8);
+          transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+}
+
+.new-loader button.isLoading {
+  pointer-events: none;
+}
+
+.new-loader button.isLoading span {
+  opacity: 0;
+  -webkit-transform: scale(0.8) translateY(3px);
+          transform: scale(0.8) translateY(3px);
+}
+
+.new-loader button.isLoading .loaderSVG {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1.2);
+          transform: translate(-50%, -50%) scale(1.2);
+}
+
+.new-loader button.isError {
+  background: #DC2346;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  pointer-events: none;
+}
+
+.new-loader button.isError span {
+  opacity: 0;
+  -webkit-transform: scale(0.8) translateY(3px);
+          transform: scale(0.8) translateY(3px);
+}
+
+.new-loader button.isError .errorIcon svg {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1.2);
+          transform: translate(-50%, -50%) scale(1.2);
+}
+
+.new-loader button.isError .loaderSVG {
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%) scale(0.8);
+          transform: translate(-50%, -50%) scale(0.8);
+}
+
+.new-loader button.isSuccess {
+  background: #1AD6A8;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  pointer-events: none;
+}
+
+.new-loader button.isSuccess span {
+  opacity: 0;
+  -webkit-transform: scale(0.8) translateY(3px);
+          transform: scale(0.8) translateY(3px);
+}
+
+.new-loader button.isSuccess .successIcon svg {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1.2);
+          transform: translate(-50%, -50%) scale(1.2);
+}
+
+.new-loader button.isSuccess .loaderSVG {
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%) scale(0.8);
+          transform: translate(-50%, -50%) scale(0.8);
+}
 /*# sourceMappingURL=style.css.map */
