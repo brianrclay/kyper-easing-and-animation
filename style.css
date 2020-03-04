@@ -534,62 +534,39 @@ button.tertiary-btn:hover, .neutral-btn.tertiary-btn:hover {
   pointer-events: auto;
 }
 
-.input-wrapper.disabled label {
-  color: #768397;
-}
-
-.input-wrapper.disabled input[type="text"] {
-  opacity: .55;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.input-wrapper.error input[type="text"] {
-  background: #ffffff !important;
-  border-color: #DC2346 !important;
-}
-
-.input-wrapper.error .help-text {
-  color: #DC2346;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.input-wrapper.show-help .help-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.input-wrapper {
+  position: relative;
+  display: inline-block;
 }
 
 .input-wrapper label {
-  display: block;
-  margin-bottom: 4px;
-  color: #454F5E;
+  font-size: 14px;
+  line-height: 16px;
+  position: absolute;
+  left: 8px;
+  top: -12px;
+  padding: 4px;
+  background: #ffffff;
+  color: #768397;
 }
 
 .input-wrapper input[type="text"] {
-  font-size: 16px;
-  padding: 12px 16px;
-  border: 1px solid #768397;
+  display: block;
   border-radius: 4px;
-  -webkit-transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
-  transition: all 350ms cubic-bezier(0.475, 0.425, 0, 0.995);
-  background: #F7F9FC;
-  width: 300px;
-}
-
-.input-wrapper input[type="text"]:hover {
-  border-color: #19212C;
-  background: #ffffff;
+  border: 1px solid #768397;
+  font-size: 16px;
+  padding: 16px 12px 12px;
+  min-width: 228px;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .input-wrapper input[type="text"]:focus {
   outline: none;
-  -webkit-box-shadow: 0 0 0 2px rgba(82, 138, 224, 0.8);
-          box-shadow: 0 0 0 2px rgba(82, 138, 224, 0.8);
-  border-color: #2F73DA;
-  background: #ffffff;
+  border: 1px solid #2F73DA;
+  -webkit-box-shadow: 0px 0px 1px 1px #2F73DA;
+          box-shadow: 0px 0px 1px 1px #2F73DA;
 }
 
 .input-wrapper .help-text {
@@ -601,11 +578,26 @@ button.tertiary-btn:hover, .neutral-btn.tertiary-btn:hover {
           align-items: center;
   margin-top: 4px;
   color: #454F5E;
-  display: none;
+  font-size: 14px;
 }
 
 .input-wrapper .help-text svg {
   margin-right: 8px;
+}
+
+.input-wrapper.error input {
+  outline: none;
+  border: 1px solid #DC2346;
+  -webkit-box-shadow: 0px 0px 1px 1px #DC2346;
+          box-shadow: 0px 0px 1px 1px #DC2346;
+}
+
+.input-wrapper.error .help-text {
+  color: #DC2346;
+}
+
+.input-wrapper.error .help-text svg {
+  fill: #DC2346;
 }
 
 .dropdown {
